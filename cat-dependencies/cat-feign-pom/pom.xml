@@ -3,25 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cat-gateway-all</artifactId>
+        <artifactId>cat-dependencies</artifactId>
         <groupId>com.cat</groupId>
         <version>1.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cat-gateway-web</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>cat-feign-pom</artifactId>
+    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>com.cat</groupId>
-            <artifactId>cat-feign-pom</artifactId>
-            <version>1.0</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.cat</groupId>
-            <artifactId>cat-authorization-oauth2-pom</artifactId>
-            <version>1.0</version>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
         </dependency>
     </dependencies>
 </project>

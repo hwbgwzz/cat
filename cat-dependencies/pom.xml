@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cat-parent</artifactId>
+        <groupId>com.cat</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>cat-dependencies</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <lombok.version>1.18.12</lombok.version>
+        <hutool.version>5.7.5</hutool.version>
+        <jackson-bom.version>2.11.2</jackson-bom.version>
+        <open.feign.version>10.10.1</open.feign.version>
+        <spring.open.feign.version>2.2.5.RELEASE</spring.open.feign.version>
+        <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <mysql-connector-java.version>8.0.21</mysql-connector-java.version>
+        <druid.version>1.1.22</druid.version>
+        <dynamic-datasource.version>3.4.1</dynamic-datasource.version>
+    </properties>
+
+    <modules>
+        <module>cat-tool-pom</module>
+        <module>cat-nacos-pom</module>
+        <module>cat-feign-pom</module>
+        <module>cat-authorization-oauth2-pom</module>
+        <module>cat-mybatis-mysql-pom</module>
+    </modules>
+
+
+</project>
