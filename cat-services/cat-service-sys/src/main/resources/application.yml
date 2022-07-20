@@ -19,3 +19,16 @@ spring:
         shared-configs:
           -${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
         #extension-configs:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/cat?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    password: root
+    username: 123456
+    hikari.pool-name: HikariCP
+    max-lifetime: 500000
+
+
+feign:
+  hystrix:
+    #开启feign的hystrix支持,默认是false
+    enabled: true

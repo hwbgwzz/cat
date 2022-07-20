@@ -15,12 +15,13 @@
     <dependencies>
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>cat-feign-pom</artifactId>
+            <artifactId>cat-authorization-oauth2-pom</artifactId>
             <version>1.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>cat-authorization-oauth2-pom</artifactId>
+            <artifactId>cat-common-client</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>

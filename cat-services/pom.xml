@@ -28,8 +28,19 @@
             <version>1.0</version>
         </dependency>
         <dependency>
+            <groupId>com.cat</groupId>
+            <artifactId>cat-mybatis-mysql-pom</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cat</groupId>
+            <artifactId>cat-common-bean</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>

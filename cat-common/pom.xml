@@ -12,9 +12,20 @@
     <artifactId>cat-common</artifactId>
     <packaging>pom</packaging>
 
+    <properties>
+        <lombok.version>1.18.12</lombok.version>
+    </properties>
+
     <modules>
         <module>cat-common-bean</module>
         <module>cat-common-client</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+    </dependencies>
 </project>
