@@ -17,6 +17,7 @@
             <groupId>com.cat</groupId>
             <artifactId>cat-feign-pom</artifactId>
             <version>1.0</version>
+            <type>pom</type>
         </dependency>
 
         <dependency>

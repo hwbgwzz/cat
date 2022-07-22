@@ -23,9 +23,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <groupId>com.cat</groupId>
+            <artifactId>cat-tool-pom</artifactId>
+            <version>1.0</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
 </project>
