@@ -3,37 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cat-parent</artifactId>
+        <artifactId>cat-gateway-all</artifactId>
         <groupId>com.cat</groupId>
         <version>1.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cat-gateway-all</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>cat-gateway-web</module>
-        <module>cat-gateway-reactive</module>
-        <module>cat-form-security</module>
-    </modules>
+    <artifactId>cat-form-security</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>cat-tool-pom</artifactId>
+            <artifactId>cat-authorization-oauth2-pom</artifactId>
             <version>1.0</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>cat-nacos-pom</artifactId>
+            <artifactId>cat-common-client</artifactId>
             <version>1.0</version>
-            <type>pom</type>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
         </dependency>
     </dependencies>
+
 </project>

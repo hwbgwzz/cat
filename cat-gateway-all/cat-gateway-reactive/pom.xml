@@ -12,11 +12,4 @@
     <artifactId>cat-gateway-reactive</artifactId>
     <packaging>jar</packaging>
 
-    <dependencies>
-        <!-- 反应方程式 web 框架 webflux-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-    </dependencies>
 </project>

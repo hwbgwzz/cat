@@ -15,18 +15,14 @@
     <dependencies>
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>cat-authorization-oauth2-pom</artifactId>
+            <artifactId>cat-feign-pom</artifactId>
             <version>1.0</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>cat-common-client</artifactId>
+            <artifactId>cat-form-security</artifactId>
             <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -1,10 +1,8 @@
-package com.cat.gateway.authentication.config;
+package com.cat.security.form.config;
 
-import com.cat.gateway.authentication.security.UserAuthProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,13 +10,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 // @EnableGlobalMethodSecurity(prePostEnabled = true)  //  启用方法级别的权限认证
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    private final AuthenticationProvider userAuthProvider;
+    //private final AuthenticationProvider userAuthProvider;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -49,9 +46,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.logoutSuccessHandler(null)
                 .permitAll()
                 .and()
-                .authorizeRequests().anyRequest().authenticated()
-                .and()
-                .authenticationProvider(userAuthProvider);
+                .authorizeRequests().anyRequest().authenticated();
+                //.and()
+                //.authenticationProvider(userAuthProvider);
     }
 
 /*    @Autowired
@@ -60,4 +57,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorities("ROLE_USER").and().withUser("test2").password("123456")
                 .authorities("ROLE_USER", "ROLE_ADMIN");
     }*/
+
 }

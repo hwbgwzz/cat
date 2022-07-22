@@ -1,4 +1,5 @@
-package com.cat.gateway.authentication.security;
+/*
+package com.cat.security.form;
 
 import com.cat.common.bean.sys.vo.CatUserVO;
 import com.cat.common.client.sys.SysClient;
@@ -7,9 +8,10 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
 
-@Component
+*/
+/*@Component*//*
+
 @RequiredArgsConstructor
 public class UserAuthProvider implements AuthenticationProvider {
     //尝试认证次数
@@ -33,3 +35,4 @@ public class UserAuthProvider implements AuthenticationProvider {
         return true;
     }
 }
+*/
