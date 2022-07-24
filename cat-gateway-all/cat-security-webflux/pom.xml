@@ -9,16 +9,10 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cat-form-security</artifactId>
+    <artifactId>cat-security-webflux</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>com.cat</groupId>
-            <artifactId>cat-authorization-oauth2-pom</artifactId>
-            <version>1.0</version>
-            <type>pom</type>
-        </dependency>
         <dependency>
             <groupId>com.cat</groupId>
             <artifactId>cat-common-client</artifactId>
@@ -26,8 +20,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
     </dependencies>
-
 </project>

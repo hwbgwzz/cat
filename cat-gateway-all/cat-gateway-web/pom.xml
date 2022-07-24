@@ -15,13 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>cat-feign-pom</artifactId>
-            <version>1.0</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>com.cat</groupId>
-            <artifactId>cat-form-security</artifactId>
+            <artifactId>cat-security-webmvc</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>

@@ -13,6 +13,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableHystrix
 public class CatGatewayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CatGatewayApplication.class, args);
+        SpringApplication springApplication = new SpringApplication(CatGatewayApplication.class);
+        springApplication.setWebApplicationType(WebApplicationType.REACTIVE);
+        springApplication.run(args);
     }
 }

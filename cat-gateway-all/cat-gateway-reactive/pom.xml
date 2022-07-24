@@ -12,4 +12,11 @@
     <artifactId>cat-gateway-reactive</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.cat</groupId>
+            <artifactId>cat-security-webflux</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -1,4 +1,4 @@
-package com.cat.security.form.config;
+package com.cat.security.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
