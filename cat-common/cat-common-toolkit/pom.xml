@@ -3,31 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cat-parent</artifactId>
+        <artifactId>cat-common</artifactId>
         <groupId>com.cat</groupId>
         <version>1.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cat-common</artifactId>
-    <packaging>pom</packaging>
-
-    <properties>
-        <lombok.version>1.18.12</lombok.version>
-    </properties>
-
-    <modules>
-        <module>cat-common-bean</module>
-        <module>cat-common-client</module>
-        <module>cat-common-toolkit</module>
-    </modules>
+    <artifactId>cat-common-toolkit</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.cat</groupId>
             <artifactId>cat-tool-pom</artifactId>
             <version>1.0</version>
-            <type>pom</type>
         </dependency>
     </dependencies>
+
 </project>

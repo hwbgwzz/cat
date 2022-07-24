@@ -15,8 +15,8 @@
     <modules>
         <module>cat-gateway-web</module>
         <module>cat-gateway-reactive</module>
-        <module>cat-form-security-webmvc</module>
-        <module>cat-form-security-webflux</module>
+        <module>cat-security-webmvc</module>
+        <module>cat-security-webflux</module>
     </modules>
 
     <dependencies>

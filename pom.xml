@@ -13,6 +13,7 @@
         <module>cat-dependencies</module>
         <module>cat-services</module>
         <module>cat-common</module>
+        <module>cat-component</module>
     </modules>
 
     <parent>
