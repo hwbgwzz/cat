@@ -21,3 +21,6 @@ https://github.com/alibaba/spring-cloud-alibaba/wiki
 Nacos Spring Cloud 快速开始<br>
 https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html
 
+
+maven<br>
+mvn clean install -DskipTests -Dmaven.javadoc.skip=true
