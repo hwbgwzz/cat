@@ -25,7 +25,7 @@ public class JwtProperties {
     private Duration expiration = Duration.ofMinutes(60);
 
     /**
-     * 当前时间距离过期时间小于 「refreshPoint」 触发 刷新jwt 并且设置请求头为refreshToken携带给客户端
+     * 当前时间距离过期时间小于 「refreshPoint」 触发 刷新jwt 并且设置请求头为refreshTokenHeader携带给客户端
      */
     private Duration refreshPoint = Duration.ofMinutes(30);
 

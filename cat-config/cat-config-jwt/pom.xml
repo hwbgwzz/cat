@@ -13,4 +13,14 @@
     <packaging>jar</packaging>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.cat</groupId>
+            <artifactId>cat-common-toolkit</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+
 </project>

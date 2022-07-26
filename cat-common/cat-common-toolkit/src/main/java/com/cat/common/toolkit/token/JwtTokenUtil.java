@@ -33,7 +33,7 @@ public class JwtTokenUtil {
 
     static {
         des = SecureUtil.des(
-                SecureUtil.generateKey(SymmetricAlgorithm.DES.getValue(), "___AWKKWJ$.&".getBytes(StandardCharsets.UTF_8))
+                SecureUtil.generateKey(SymmetricAlgorithm.DES.getValue(), "L___AWKKWJ$.&".getBytes(StandardCharsets.UTF_8))
                         .getEncoded());
     }
 
@@ -43,7 +43,7 @@ public class JwtTokenUtil {
      * @param subject
      * @return
      */
-    private String generateToken(String jsonBody, String subject) {
+    public String generateToken(String jsonBody, String subject) {
         Date nowDate = new Date();
         Date expirationDate = new Date(nowDate.getTime() + expiration);
         return Jwts.builder()
