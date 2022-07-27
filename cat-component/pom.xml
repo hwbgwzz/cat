@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>cat-component</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>sea-component-jackson</module>
     </modules>

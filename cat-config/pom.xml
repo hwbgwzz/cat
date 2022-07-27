@@ -12,11 +12,9 @@
     <artifactId>cat-config</artifactId>
     <packaging>pom</packaging>
 
-
     <modules>
         <module>cat-config-jwt</module>
     </modules>
-
 
     <dependencies>
         <dependency>
