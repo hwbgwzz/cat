@@ -14,7 +14,7 @@
 
     <modules>
         <module>sea-component-jackson</module>
-        <module>sea-common-web</module>
+        <module>sea-component-web</module>
     </modules>
 
 
