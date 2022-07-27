@@ -12,12 +12,4 @@
     <artifactId>cat-common-toolkit</artifactId>
     <packaging>jar</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.cat</groupId>
-            <artifactId>cat-tool-pom</artifactId>
-            <version>1.0</version>
-        </dependency>
-    </dependencies>
-
 </project>
