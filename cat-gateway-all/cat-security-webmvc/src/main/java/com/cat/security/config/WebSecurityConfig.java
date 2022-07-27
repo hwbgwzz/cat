@@ -1,6 +1,8 @@
 package com.cat.security.config;
 
 import com.cat.security.LoginAuthenticationProvider;
+import com.cat.security.filter.JWTAuthenticationFilter;
+import com.cat.security.filter.LoginAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -68,9 +71,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().anyRequest().authenticated()
                 .and()
                 //添加一个过滤器 把访问 /login 的请求交给 JWTLoginFilter 来处理 这个类认证成功后生成jwt给客户端
-                .addFilterBefore(null,null)
+                .addFilterBefore(new LoginAuthenticationFilter("/login", authenticationManager()),
+                        UsernamePasswordAuthenticationFilter.class)
                 //添加一个过滤器验证客户端请求头带的Token是否合法，如果合法就可以访问接口资源
-                .addFilterBefore(null, null);
+                .addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Autowired

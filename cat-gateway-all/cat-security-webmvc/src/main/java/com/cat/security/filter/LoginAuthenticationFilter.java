@@ -1,5 +1,6 @@
 package com.cat.security.filter;
 
+import com.cat.common.toolkit.json.JSON;
 import com.cat.security.domain.AccountCredentials;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +21,8 @@ import java.io.IOException;
 /**
  * 登录处理Filter
  */
-public class LoginFilter extends AbstractAuthenticationProcessingFilter  {
-    protected LoginFilter(String url, AuthenticationManager authManager) {
+public class LoginAuthenticationFilter extends AbstractAuthenticationProcessingFilter  {
+    public LoginAuthenticationFilter(String url, AuthenticationManager authManager) {
         super(new AntPathRequestMatcher(url));
         //设置认证管理器
         setAuthenticationManager(authManager);
@@ -57,7 +58,7 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter  {
 
 
     /**
-     *  登录时需要验证
+     *  登录时解析登录数据生成验证令牌
      * @param req
      * @param res
      * @return
@@ -68,7 +69,7 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter  {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException, IOException, ServletException {
         // JSON反序列化成 AccountCredentials
-        AccountCredentials accountCredentials = new ObjectMapper().readValue(req.getInputStream(), AccountCredentials.class);
+        AccountCredentials accountCredentials = JSON.getInstance().readValue(req.getInputStream(), AccountCredentials.class);
         //返回验证令牌
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(

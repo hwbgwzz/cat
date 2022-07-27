@@ -104,14 +104,6 @@ public class JSON {
     }
 
     /**
-     * 返回序列化实例
-     * @return
-     */
-    public static ObjectMapper getObjectMapper() {
-        return instance;
-    }
-
-    /**
      * 对象转换json字符串
      *
      * @param obj 目标对象

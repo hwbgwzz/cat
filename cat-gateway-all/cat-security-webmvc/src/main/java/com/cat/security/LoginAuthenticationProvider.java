@@ -27,14 +27,15 @@ public class LoginAuthenticationProvider implements AuthenticationProvider {
         String passWord = authentication.getCredentials().toString();
 
         CatUserVO catUserVO = sysClient.getCatUserByUserName(userName);
-        if (ObjectUtil.isNotEmpty(catUserVO)
-                && passwordEncoder.encode(passWord).equals(catUserVO.getPassword())) {
+        if (ObjectUtil.isEmpty(catUserVO)) {
+            throw new BadCredentialsException("用户名错误");
+        }
+        if (passwordEncoder.encode(passWord).equals(catUserVO.getPassword())) {
             //生成认证令牌
             Authentication auth = new UsernamePasswordAuthenticationToken(userName, passWord);
             return auth;
-        }else {
-            throw new BadCredentialsException("用户名或密码错误");
         }
+        throw new BadCredentialsException("密码错误");
     }
 
     /**
