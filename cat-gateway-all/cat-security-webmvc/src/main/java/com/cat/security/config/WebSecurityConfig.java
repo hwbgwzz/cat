@@ -1,6 +1,6 @@
 package com.cat.security.config;
 
-import com.cat.security.LoginAuthenticationProvider;
+import com.cat.security.IdentityAuthenticationProvider;
 import com.cat.security.filter.JWTAuthenticationFilter;
 import com.cat.security.filter.LoginAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 // @EnableGlobalMethodSecurity(prePostEnabled = true)  //  启用方法级别的权限认证
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    private final LoginAuthenticationProvider loginAuthenticationProvider;
+    private final IdentityAuthenticationProvider identityAuthenticationProvider;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -80,7 +80,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configure(AuthenticationManagerBuilder authenticationMgb) throws Exception {
         // 使用自定义身份验证组件,先filter创建认证对象传给LoginAuthenticationProvider
-        authenticationMgb.authenticationProvider(loginAuthenticationProvider);
+        authenticationMgb.authenticationProvider(identityAuthenticationProvider);
         /*authenticationMgr.inMemoryAuthentication().withUser("test1").password("123456")
                 .authorities("ROLE_USER").and().withUser("test2").password("123456")
                 .authorities("ROLE_USER", "ROLE_ADMIN");*/

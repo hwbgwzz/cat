@@ -5,7 +5,7 @@ package com.cat.common.constant;
  */
 public interface JwtConstant {
     //Token前缀
-    String TOKEN_PREFIX = "Bearer";
+    String TOKEN_PREFIX = "Bearer ";
 
     // 存放Token的Header Key
     String HEADER_STRING = "Authorization";

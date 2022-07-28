@@ -43,4 +43,12 @@ public class JwtHelper {
     public static JwtTokenUtil getJwtTokenUtil() {
         return SpringContextUtils.getBean(JwtTokenUtil.class);
     }
+
+    /**
+     * 非spring容器管理的类获取JwtProperties
+     * @return
+     */
+    public static JwtProperties getJwtProperties() {
+        return SpringContextUtils.getBean(JwtProperties.class);
+    }
 }

@@ -1,16 +1,19 @@
 package com.cat.security.filter;
 
+import cn.hutool.http.HttpStatus;
+import com.cat.JwtHelper;
+import com.cat.common.bean.Result;
+import com.cat.common.constant.JwtConstant;
+import com.cat.common.security.UserSecurityInfo;
 import com.cat.common.toolkit.json.JSON;
 import com.cat.security.domain.AccountCredentials;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -39,8 +42,22 @@ public class LoginAuthenticationFilter extends AbstractAuthenticationProcessingF
      */
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+        UserSecurityInfo userSecurityInfo = (UserSecurityInfo)authResult.getPrincipal();
+        String token = JwtHelper
+                .getJwtTokenUtil()
+                .generateToken(JSON.toJSONString(userSecurityInfo), userSecurityInfo.getUserId());
+        Result<String> result = Result.OK("登录验证成功", token);
+        // 将 JWT 写入 body
+        try {
+            response.setContentType("application/json");
+            response.setStatus(HttpStatus.HTTP_OK);
+            response.setHeader(JwtConstant.HEADER_STRING, JwtConstant.TOKEN_PREFIX + token);
+            response.getOutputStream().println(JSON.toFormatJSONString(result));
 
-        super.successfulAuthentication(request, response, chain, authResult);
+            //以上可通过response重定向(302)到系统首页并带上token
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -53,7 +70,15 @@ public class LoginAuthenticationFilter extends AbstractAuthenticationProcessingF
      */
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
-        super.unsuccessfulAuthentication(request, response, failed);
+        Result<?> result = Result.error("登录验证失败:" + failed.getMessage());
+        // 将 JWT 写入 body
+        try {
+            response.setContentType("application/json");
+            response.setStatus(HttpStatus.HTTP_OK);
+            response.getOutputStream().println(JSON.toFormatJSONString(result));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
