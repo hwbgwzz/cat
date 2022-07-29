@@ -24,3 +24,7 @@ https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html
 
 maven<br>
 mvn clean install -DskipTests -Dmaven.javadoc.skip=true
+
+
+es<br>
+https://github.com/dromara/easy-es
