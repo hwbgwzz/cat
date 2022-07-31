@@ -58,8 +58,9 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
                 tokenInvalidHandler((HttpServletResponse)res, "token校验失败");
             }
         } else {
+            filterChain.doFilter(req,res);
             //没有token，返回客户端
-            tokenInvalidHandler((HttpServletResponse)res, "没有token");
+            //tokenInvalidHandler((HttpServletResponse)res, "没有token");
         }
     }
 
@@ -71,6 +72,7 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
         //生成认证令牌
         Authentication auth = new UsernamePasswordAuthenticationToken(userSecurityInfo, userSecurityInfo.isAuthenticated());
         //认证上下文设置认证令牌
+        auth.setAuthenticated(userSecurityInfo.isAuthenticated());
         SecurityContextHolder.getContext().setAuthentication(auth);
     }
 

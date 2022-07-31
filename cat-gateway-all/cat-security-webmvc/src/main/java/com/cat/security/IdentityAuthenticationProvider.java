@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 /**
- * 自定义身份验证组件,先filter创建认证对象传给LoginAuthenticationProvider
+ * 自定义身份验证组件,先filter创建认证对象传给IdentityAuthenticationProvider
  */
 @Component
 @RequiredArgsConstructor
@@ -24,7 +24,10 @@ public class IdentityAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String userName = authentication.getName();
+        if (authentication.isAuthenticated()) {
+            return authentication;
+        }
+        String userName = authentication.getPrincipal().toString();
         String passWord = authentication.getCredentials().toString();
 
         CatUserVO catUserVO = sysClient.getCatUserByUserName(userName);

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -15,6 +16,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import static org.springframework.http.HttpMethod.GET;
 
 @Configuration
 @EnableWebSecurity
@@ -41,14 +44,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                //关闭csrf验证
-                .csrf().disable()
-                //关闭cors验证
+                //关闭跨域验证，允许跨域
                 .cors().disable()
+                //关闭跨站验证，允许跨站
+                .csrf().disable()
                 //对请求进行认证
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 //.antMatchers(HttpMethod.POST, "/login").permitAll()
+                // swagger 静态资源无需授权
+                .antMatchers(GET, "/**/swagger-ui.html", "/**/swagger-resources/**", "/**/webjars/**", "/**/*/api-docs",  "/actuator/**", "/**/doc.html", "/**/swagger-resources/**", "/favicon.ico").permitAll()
+                .antMatchers("/login", "/logout").permitAll()
+                .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -56,10 +63,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.passwordParameter(null)
                 //.successHandler(null)
                 //.failureHandler(null)
-                .permitAll()
                 //.and()
                 //自定义身份验证组件
-                //.authenticationProvider(new LoginAuthenticationProvider())
+                //.authenticationProvider(identityAuthenticationProvider)
+                //.exceptionHandling()
+                //.accessDeniedHandler(null)
+                //.authenticationEntryPoint(null)
                 .and()
                 .logout()
                 .logoutUrl("/logout").invalidateHttpSession(true).clearAuthentication(true)
@@ -74,7 +83,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(new LoginAuthenticationFilter("/login", authenticationManager()),
                         UsernamePasswordAuthenticationFilter.class)
                 //添加一个过滤器验证客户端请求头带的Token是否合法，如果合法就可以访问接口资源
-                .addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterAfter(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Autowired
