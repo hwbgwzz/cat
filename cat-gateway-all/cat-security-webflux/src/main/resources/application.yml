@@ -1,0 +1,79 @@
+spring:
+  profiles: dev,test
+  security:
+    oauth2:
+      client:
+        provider:
+          p1:
+            #dev
+            token-uri: xxx
+            authorization-uri: xxx
+            user-info-uri: xxx
+            user-info-authentication-method: form
+          p2:
+            authorization-uri: xxx
+            user-info-uri: xx
+            token-uri: xx
+            user-info-authentication-method: form
+        registration:
+          p1:
+            client-name: xx
+            client-id: xx
+            client-secret: xx
+            authorization-grant-type: authorization_code
+            redirect-uri: xx
+            scope:
+              - all
+          p2:
+            client-name: xxx
+            client-id: xxx
+            client-secret: xxx
+            authorization-grant-type: authorization_code
+            redirect-uri: xxx
+            scope:
+              - snsapi_base
+
+  session:
+    timeout: PT2H
+#logging:
+#  level:
+#    org.springframework: debug
+
+
+---
+spring:
+  profiles: pre,prod
+  security:
+    oauth2:
+      client:
+        provider:
+          p1:
+            #dev
+            token-uri: xxx
+            authorization-uri: xxx
+            user-info-uri: xxx
+            user-info-authentication-method: form
+          p2:
+            authorization-uri: xxx
+            user-info-uri: xx
+            token-uri: xx
+            user-info-authentication-method: form
+        registration:
+          p1:
+            client-name: xx
+            client-id: xx
+            client-secret: xx
+            authorization-grant-type: authorization_code
+            redirect-uri: xx
+            scope:
+              - all
+          p2:
+            client-name: xxx
+            client-id: xxx
+            client-secret: xxx
+            authorization-grant-type: authorization_code
+            redirect-uri: xxx
+            scope:
+              - snsapi_base
+  session:
+    timeout: PT2H
