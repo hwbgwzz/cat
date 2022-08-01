@@ -12,13 +12,19 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
         namespace: ${spring.profiles.active}
+        heart-beat-interval: 1000 #心跳间隔。单位为毫秒。
+        heart-beat-timeout: 3000 #心跳暂停。单位为毫秒。
+        ip-delete-timeout: 6000 #Ip删除超时。单位为毫秒。
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         namespace: ${spring.profiles.active}
         file-extension: yml
         shared-configs:
           -${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-        #extension-configs:
+        extension-configs:
+          - dataId: common-redis.yml
+            refresh: true
+
     #路由配置
     gateway:
       default-filters:
@@ -29,10 +35,12 @@ spring:
         - name: RequestRateLimiter
           args:
             deny-empty-key: true
-            #SpEL表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象,请求用户ip作为限流key
+            #SpEL表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象,限流键的解析器,请求用户ip作为限流key,
             key-resolver: '#{@ipKeyResolver}'
-            redis-rate-limiter.replenishRate: 1
-            redis-rate-limiter.burstCapacity: 3
+            #令牌桶的填充速率,每秒允许通过的请求数
+            redis-rate-limiter.replenishRate: 10
+            #令牌桶的最大容量,一秒内最大的请求数
+            redis-rate-limiter.burstCapacity: 20
 
       routes:
         - id: cat-service-sys
