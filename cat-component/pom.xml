@@ -17,6 +17,10 @@
         <module>sea-component-web</module>
         <module>sea-component-elasticsearch</module>
         <module>sea-component-redis</module>
+        <module>sea-component-kafka</module>
+        <module>sea-component-zookeeper</module>
+        <module>sea-component-seata</module>
+        <module>sea-component-sentinel</module>
     </modules>
 
     <dependencies>
