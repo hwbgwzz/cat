@@ -3,21 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cat-parent</artifactId>
+        <artifactId>cat-component</artifactId>
         <groupId>com.cat</groupId>
         <version>1.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cat-component</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>sea-component-jackson</module>
-        <module>sea-component-web</module>
-        <module>sea-component-elasticsearch</module>
-        <module>sea-component-redis</module>
-    </modules>
+    <artifactId>sea-component-redis</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -25,6 +18,17 @@
             <artifactId>cat-common-toolkit</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
     </dependencies>
-
 </project>
