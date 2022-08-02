@@ -26,7 +26,23 @@ https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html
 mvn clean install -DskipTests -Dmaven.javadoc.skip=true
 
 【redis】<br>
-
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    cluster:
+      nodes:
+        - 127.0.0.1:6379
+    password: 123456
+    database: 7
+    timeout: 5000 #连接超时时间
+    jedis:
+      pool:
+        max-active: 200 #连接池最大连接数
+        max-wait: 5s #连接池最大阻塞时间
+        max-idle: 10 #连接池中最大空闲连接
+        min-idle: 0 #连接池中最小空闲连接
+        
 【es】<br>
 https://github.com/dromara/easy-es
 
