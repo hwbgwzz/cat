@@ -55,6 +55,7 @@ spring:
                 #key-resolver: '#{@ipKeyResolver}'
                 #redis-rate-limiter.replenishRate: 1
                 #redis-rate-limiter.burstCapacity: 3
+
       #统一配置跨域请求
       globalcors:
         cors-configurations:
