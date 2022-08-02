@@ -55,6 +55,19 @@ spring:
                 #key-resolver: '#{@ipKeyResolver}'
                 #redis-rate-limiter.replenishRate: 1
                 #redis-rate-limiter.burstCapacity: 3
+      #统一配置跨域请求
+      globalcors:
+        cors-configurations:
+          '[/**]':
+              allowed-origins: "*"
+              allowed-headers: "*"
+              allow-credentials: true
+              allowed-methods:
+                - GET
+                - POST
+                - DELETE
+                - PUT
+                - OPTION
 
 #熔断超时时间
 hystrix:
