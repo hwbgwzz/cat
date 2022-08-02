@@ -32,6 +32,7 @@ spring:
           args:
             name: fallbackcmd
             fallbackUri: forward:/fallback
+
         - name: RequestRateLimiter
           args:
             deny-empty-key: true
@@ -41,6 +42,9 @@ spring:
             redis-rate-limiter.replenishRate: 10
             #令牌桶的最大容量,一秒内最大的请求数
             redis-rate-limiter.burstCapacity: 20
+
+        #包含了两份Access-Control-Allow-Origin头的处理，返回的是我们自己设置的规则 or CorsResponseHeaderFilter实现去重
+        #- DedupeResponseHeader=Vary Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_FIRST
 
       routes:
         - id: cat-service-sys
