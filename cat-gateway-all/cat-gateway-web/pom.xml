@@ -15,8 +15,20 @@
     <dependencies>
         <dependency>
             <groupId>com.cat</groupId>
+            <artifactId>cat-common-toolkit</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cat</groupId>
             <artifactId>cat-security-webmvc</artifactId>
             <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
         </dependency>
     </dependencies>
 </project>

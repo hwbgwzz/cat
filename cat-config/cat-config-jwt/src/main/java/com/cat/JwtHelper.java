@@ -17,23 +17,16 @@ import javax.annotation.PostConstruct;
 public class JwtHelper {
     private final JwtProperties jwtProperties;
 
-    private JwtTokenUtil jwtTokenUtil;
-
-    @PostConstruct
-    private void initUtil() {
-        jwtTokenUtil = JwtTokenUtil.builder()
-                        .secretKey(jwtProperties.getSigningKey())
-                        .expiration(jwtProperties.getExpiration().toMillis())
-                        .build();
-    }
-
     /**
      * bean被spring容器管理的场景使用
      * @return
      */
     @Bean
     public JwtTokenUtil jwtTokenUtil() {
-        return jwtTokenUtil;
+        return JwtTokenUtil.builder()
+                .secretKey(jwtProperties.getSigningKey())
+                .expiration(jwtProperties.getExpiration().toMillis())
+                .build();
     }
 
     /**

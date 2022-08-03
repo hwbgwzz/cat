@@ -23,7 +23,7 @@ spring:
           -${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
         extension-configs:
           - dataId: common-redis.yml
-            refresh: true
+          - dataId: security-jwt
 
     #路由配置
     gateway:
