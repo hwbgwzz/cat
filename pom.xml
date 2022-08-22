@@ -15,6 +15,7 @@
         <module>cat-common</module>
         <module>cat-component</module>
         <module>cat-config</module>
+        <module>cat-middleware</module>
     </modules>
 
     <parent>
