@@ -21,6 +21,7 @@
         <module>cat-component-zookeeper</module>
         <module>cat-component-seata</module>
         <module>cat-component-sentinel</module>
+        <module>cat-component-netty</module>
     </modules>
 
     <dependencies>
