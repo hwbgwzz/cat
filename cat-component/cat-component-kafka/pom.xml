@@ -9,15 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>sea-component-elasticsearch</artifactId>
+    <artifactId>cat-component-kafka</artifactId>
     <packaging>jar</packaging>
-
-    <dependencies>
-        <dependency>
-            <groupId>cn.easy-es</groupId>
-            <artifactId>easy-es-boot-starter</artifactId>
-            <version>0.9.60</version>
-        </dependency>
-    </dependencies>
 
 </project>

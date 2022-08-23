@@ -20,7 +20,7 @@
         <module>cat-common-bean</module>
         <module>cat-common-client</module>
         <module>cat-common-toolkit</module>
-        <module>sea-common-exception</module>
+        <module>cat-common-exception</module>
     </modules>
 
     <dependencies>

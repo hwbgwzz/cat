@@ -13,14 +13,14 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>sea-component-jackson</module>
-        <module>sea-component-web</module>
-        <module>sea-component-elasticsearch</module>
-        <module>sea-component-redis</module>
-        <module>sea-component-kafka</module>
-        <module>sea-component-zookeeper</module>
-        <module>sea-component-seata</module>
-        <module>sea-component-sentinel</module>
+        <module>cat-component-jackson</module>
+        <module>cat-component-web</module>
+        <module>cat-component-elasticsearch</module>
+        <module>cat-component-redis</module>
+        <module>cat-component-kafka</module>
+        <module>cat-component-zookeeper</module>
+        <module>cat-component-seata</module>
+        <module>cat-component-sentinel</module>
     </modules>
 
     <dependencies>

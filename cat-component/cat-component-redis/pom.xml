@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>sea-component-redis</artifactId>
+    <artifactId>cat-component-redis</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

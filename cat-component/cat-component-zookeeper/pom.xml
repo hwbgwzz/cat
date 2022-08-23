@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>sea-component-zookeeper</artifactId>
+    <artifactId>cat-component-zookeeper</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

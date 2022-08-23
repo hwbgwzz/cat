@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>sea-component-kafka</artifactId>
+    <artifactId>cat-component-sentinel</artifactId>
     <packaging>jar</packaging>
 
 </project>

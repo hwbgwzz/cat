@@ -29,7 +29,7 @@
 
         <dependency>
             <groupId>com.cat</groupId>
-            <artifactId>sea-common-exception</artifactId>
+            <artifactId>cat-common-exception</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>

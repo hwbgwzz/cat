@@ -9,14 +9,15 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>sea-component-jackson</artifactId>
+    <artifactId>cat-component-elasticsearch</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>com.cat</groupId>
-            <artifactId>cat-common-toolkit</artifactId>
-            <version>1.0</version>
+            <groupId>cn.easy-es</groupId>
+            <artifactId>easy-es-boot-starter</artifactId>
+            <version>0.9.60</version>
         </dependency>
     </dependencies>
+
 </project>
