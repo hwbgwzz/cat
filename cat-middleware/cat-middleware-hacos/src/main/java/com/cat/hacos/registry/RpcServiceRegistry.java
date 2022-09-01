@@ -39,7 +39,7 @@ public class RpcServiceRegistry {
                             pipeline.addLast(new LengthFieldPrepender(4));
                             pipeline.addLast("encoder", new ObjectEncoder());
                             pipeline.addLast("decoder", new ObjectDecoder(Integer.MAX_VALUE, ClassResolvers.cacheDisabled(null)));
-                            pipeline.addLast(null);
+                            pipeline.addLast(new RegistryHandler());
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)
