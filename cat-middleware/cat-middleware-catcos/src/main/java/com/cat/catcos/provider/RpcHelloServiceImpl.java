@@ -1,6 +1,6 @@
-package com.cat.hacos.provider;
+package com.cat.catcos.provider;
 
-import com.cat.hacos.api.IRpcHelloService;
+import com.cat.catcos.api.IRpcHelloService;
 
 public class RpcHelloServiceImpl implements IRpcHelloService {
     @Override

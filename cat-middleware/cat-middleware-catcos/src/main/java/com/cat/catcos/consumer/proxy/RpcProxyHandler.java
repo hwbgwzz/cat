@@ -1,4 +1,4 @@
-package com.cat.hacos.consumer.proxy;
+package com.cat.catcos.consumer.proxy;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

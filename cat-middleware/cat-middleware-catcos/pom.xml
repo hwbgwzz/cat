@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cat-middleware-hacos</artifactId>
+    <artifactId>cat-middleware-catcos</artifactId>
     <packaging>jar</packaging>
     <description>rpc implement microservice management of hacos,mainly includes: Registry center, Monitor center</description>
 
@@ -18,6 +18,11 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.63.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.msgpack</groupId>
+            <artifactId>msgpack</artifactId>
+            <version>0.6.12</version>
         </dependency>
     </dependencies>
 </project>

@@ -14,7 +14,7 @@
 
     <modules>
         <module>cat-middleware-homcat</module>
-        <module>cat-middleware-hacos</module>
+        <module>cat-middleware-catcos</module>
         <module>cat-middleware-hass</module>
     </modules>
 

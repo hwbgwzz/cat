@@ -1,8 +1,8 @@
-package com.cat.hacos.consumer;
+package com.cat.catcos.consumer;
 
-import com.cat.hacos.api.IRpcHelloService;
-import com.cat.hacos.api.IRpcService;
-import com.cat.hacos.consumer.proxy.RpcProxy;
+import com.cat.catcos.api.IRpcHelloService;
+import com.cat.catcos.api.IRpcService;
+import com.cat.catcos.consumer.proxy.RpcProxy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

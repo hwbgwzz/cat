@@ -1,4 +1,4 @@
-package com.cat.hacos.protocol;
+package com.cat.catcos.protocol;
 
 import lombok.Data;
 

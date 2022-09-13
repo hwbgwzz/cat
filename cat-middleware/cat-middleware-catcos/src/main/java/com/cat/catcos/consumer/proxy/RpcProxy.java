@@ -1,6 +1,6 @@
-package com.cat.hacos.consumer.proxy;
+package com.cat.catcos.consumer.proxy;
 
-import com.cat.hacos.protocol.InvokerProtocol;
+import com.cat.catcos.protocol.InvokerProtocol;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

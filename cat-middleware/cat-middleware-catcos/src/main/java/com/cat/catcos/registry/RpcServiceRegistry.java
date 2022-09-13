@@ -1,4 +1,4 @@
-package com.cat.hacos.registry;
+package com.cat.catcos.registry;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

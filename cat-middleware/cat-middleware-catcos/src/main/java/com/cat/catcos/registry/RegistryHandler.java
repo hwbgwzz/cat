@@ -1,9 +1,8 @@
-package com.cat.hacos.registry;
+package com.cat.catcos.registry;
 
-import com.cat.hacos.protocol.InvokerProtocol;
+import com.cat.catcos.protocol.InvokerProtocol;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.handler.codec.http.HttpRequest;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
